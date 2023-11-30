@@ -37,3 +37,17 @@ def morse_to_text(morse_code):
             return None
     return text
 
+def main():
+    user_input = input("Enter the text or Morse code you want to convert: ")
+    if any(char.isalpha() for char in user_input):
+        morse_result = text_to_morse(user_input)
+        if morse_result is not None:
+            print(f'Text to Morse Code: {morse_result}')
+    else:
+        text_result = morse_to_text(user_input)
+        if text_result is not None:
+            print(f'Morse Code to Text: {text_result}')
+
+if __name__ == "__main__":
+    main()
+
